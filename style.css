@@ -39,8 +39,8 @@ body {
 }
 
 .logo-img {
-    width: 120px;
-    height: 32px;
+    width: 180px;
+    height: 48px;
     object-fit: contain;
 }
 
@@ -212,7 +212,7 @@ body {
 
 .about-image img {
     width: 100%;
-    max-width: 300px;
+    max-width: 400px;
     height: auto;
     object-fit: contain;
 }
