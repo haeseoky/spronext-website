@@ -1,0 +1,16 @@
+{
+  "name": "spronext-website",
+  "version": "1.0.0",
+  "description": "SPRONEXT 회사 소개 웹사이트",
+  "main": "index.html",
+  "scripts": {
+    "dev": "http-server -p 8080 -o",
+    "build": "echo 'Static website ready'"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "keywords": ["vue", "company", "website", "spronext"],
+  "author": "SPRONEXT",
+  "license": "MIT"
+}

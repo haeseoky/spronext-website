@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPRONEXT - Business Innovation Experts</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <nav class="nav">
+                <div class="nav-container">
+                    <div class="logo">
+                        <img src="KakaoTalk_Photo_2025-07-20-23-12-50.jpeg" alt="SPRONEXT Logo" class="logo-img">
+                        <span class="logo-text">SPRONEXT</span>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="#about">회사소개</a></li>
+                        <li><a href="#services">서비스</a></li>
+                        <li><a href="#vision">비전</a></li>
+                        <li><a href="#contact">연락처</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">비즈니스 혁신을 이끄는</h1>
+                    <h2 class="hero-subtitle">SPRONEXT</h2>
+                    <p class="hero-description">
+                        전문적인 비즈니스 솔루션으로 귀하의 성공을 함께 만들어갑니다.
+                    </p>
+                    <button class="cta-button" @click="scrollToSection('about')">
+                        더 알아보기
+                    </button>
+                </div>
+            </section>
+
+            <section id="about" class="section about">
+                <div class="container">
+                    <h2 class="section-title">회사 소개</h2>
+                    <div class="about-grid">
+                        <div class="about-text">
+                            <h3>혁신적인 비즈니스 솔루션 전문가</h3>
+                            <p>
+                                SPRONEXT는 기업의 디지털 전환과 혁신을 이끄는 전문 컨설팅 회사입니다. 
+                                고객의 비즈니스 성장을 위한 맞춤형 솔루션을 제공하며, 
+                                지속 가능한 성공을 함께 만들어갑니다.
+                            </p>
+                            <div class="stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">100+</div>
+                                    <div class="stat-label">성공 프로젝트</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">50+</div>
+                                    <div class="stat-label">파트너 기업</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">10+</div>
+                                    <div class="stat-label">년 경험</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-image">
+                            <img src="KakaoTalk_Photo_2025-07-20-23-13-04.jpeg" alt="SPRONEXT 명함">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="services" class="section services">
+                <div class="container">
+                    <h2 class="section-title">주요 서비스</h2>
+                    <div class="services-grid">
+                        <div class="service-card" v-for="service in services" :key="service.id">
+                            <div class="service-icon">{{ service.icon }}</div>
+                            <h3>{{ service.title }}</h3>
+                            <p>{{ service.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="vision" class="section vision">
+                <div class="container">
+                    <h2 class="section-title">우리의 비전</h2>
+                    <div class="vision-content">
+                        <div class="vision-text">
+                            <h3>미래를 향한 혁신</h3>
+                            <p>
+                                SPRONEXT는 기술과 창의성을 결합하여 
+                                고객의 비즈니스가 지속적으로 성장할 수 있는 
+                                혁신적인 솔루션을 제공합니다.
+                            </p>
+                        </div>
+                        <div class="values">
+                            <div class="value-item" v-for="value in values" :key="value.id">
+                                <h4>{{ value.title }}</h4>
+                                <p>{{ value.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section contact">
+                <div class="container">
+                    <h2 class="section-title">연락처</h2>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h3>이메일</h3>
+                            <p>jysong@spronext.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>홈페이지</h3>
+                            <p>http://spronext.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>주소</h3>
+                            <p>서울시 서초구 서초동</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <span>SPRONEXT</span>
+                    </div>
+                    <div class="footer-text">
+                        <p>&copy; 2025 SPRONEXT. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
