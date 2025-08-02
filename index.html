@@ -43,32 +43,115 @@
 
             <section id="about" class="section about">
                 <div class="container">
-                    <h2 class="section-title">회사 소개</h2>
-                    <div class="about-grid">
-                        <div class="about-text">
-                            <h3>혁신적인 비즈니스 솔루션 전문가</h3>
-                            <p>
-                                SPRONEXT는 기업의 디지털 전환과 혁신을 이끄는 전문 컨설팅 회사입니다. 
-                                고객의 비즈니스 성장을 위한 맞춤형 솔루션을 제공하며, 
-                                지속 가능한 성공을 함께 만들어갑니다.
-                            </p>
-                            <div class="stats">
-                                <div class="stat-item">
-                                    <div class="stat-number">100+</div>
-                                    <div class="stat-label">성공 프로젝트</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-number">50+</div>
-                                    <div class="stat-label">파트너 기업</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-number">10+</div>
-                                    <div class="stat-label">년 경험</div>
+                    <!-- Hero About Section -->
+                    <div class="about-hero">
+                        <div class="about-hero-content">
+                            <div class="hero-badge">{{ aboutBadge }}</div>
+                            <h2 class="about-hero-title">{{ aboutHero.title }}</h2>
+                            <p class="about-hero-subtitle">{{ aboutHero.subtitle }}</p>
+                            <div class="hero-features">
+                                <div class="feature-item" v-for="feature in aboutHero.features" :key="feature.id">
+                                    <div class="feature-icon">{{ feature.icon }}</div>
+                                    <span>{{ feature.text }}</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="about-image">
-                            <img src="logo.svg" alt="SPRONEXT Logo">
+                        <div class="about-hero-visual">
+                            <div class="floating-cards">
+                                <div class="card" v-for="card in floatingCards" :key="card.id" :class="'card-' + card.id">
+                                    <div class="card-icon">{{ card.icon }}</div>
+                                    <div class="card-text">{{ card.text }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Story Section -->
+                    <div class="story-section">
+                        <div class="story-timeline">
+                            <div class="timeline-item" v-for="story in companyStory" :key="story.year">
+                                <div class="timeline-year">{{ story.year }}</div>
+                                <div class="timeline-content">
+                                    <h3>{{ story.title }}</h3>
+                                    <p>{{ story.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Enhanced Stats Section -->
+                    <div class="enhanced-stats">
+                        <div class="stats-grid">
+                            <div class="stat-card" v-for="stat in enhancedStats" :key="stat.id">
+                                <div class="stat-visual">
+                                    <div class="stat-icon">{{ stat.icon }}</div>
+                                    <div class="stat-progress">
+                                        <div class="progress-bar" :style="{ width: stat.progress + '%' }"></div>
+                                    </div>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number">{{ stat.number }}</div>
+                                    <div class="stat-label">{{ stat.label }}</div>
+                                    <div class="stat-description">{{ stat.description }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Leadership Section -->
+                    <div class="leadership-section">
+                        <h2 class="section-subtitle">리더십 팀</h2>
+                        <div class="leadership-grid">
+                            <div class="leader-card" v-for="leader in leadership" :key="leader.id">
+                                <div class="leader-avatar">
+                                    <img :src="leader.image" :alt="leader.name">
+                                    <div class="leader-social">
+                                        <a v-for="social in leader.social" :key="social.platform" :href="social.url" class="social-link">
+                                            {{ social.icon }}
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="leader-info">
+                                    <h3>{{ leader.name }}</h3>
+                                    <p class="leader-position">{{ leader.position }}</p>
+                                    <p class="leader-bio">{{ leader.bio }}</p>
+                                    <div class="leader-expertise">
+                                        <span v-for="skill in leader.expertise" :key="skill" class="expertise-tag">{{ skill }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Values & Culture -->
+                    <div class="culture-section">
+                        <h2 class="section-subtitle">우리의 문화와 가치</h2>
+                        <div class="culture-grid">
+                            <div class="culture-item" v-for="culture in companyCulture" :key="culture.id">
+                                <div class="culture-visual">
+                                    <div class="culture-icon">{{ culture.icon }}</div>
+                                    <div class="culture-pattern"></div>
+                                </div>
+                                <div class="culture-content">
+                                    <h3>{{ culture.title }}</h3>
+                                    <p>{{ culture.description }}</p>
+                                    <ul class="culture-points">
+                                        <li v-for="point in culture.points" :key="point">{{ point }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Section -->
+                    <div class="about-cta">
+                        <div class="cta-content">
+                            <h2>함께 성장할 파트너를 찾고 계신가요?</h2>
+                            <p>SPRONEXT의 전문가들과 상담하여 귀하의 비즈니스 목표를 달성하세요.</p>
+                            <div class="cta-buttons">
+                                <button class="btn-primary" @click="scrollToSection('contact')">무료 상담 신청</button>
+                                <button class="btn-secondary" @click="downloadBrochure">회사 소개서 다운로드</button>
+                            </div>
                         </div>
                     </div>
                 </div>
